@@ -3,12 +3,17 @@ import React, { useState } from "react";
 function Quiz() {
   // let a = [1, 9, 3, 6, 2];
   const [num, setNum] = useState([]);
-
+  let quizArr = [];
   const generateNum = () => {
-    const quizNumbers = Math.floor(Math.random() * (36 - 5)) + 5;
-    // console.log(typeof quizNumbers);
-    // num.sort();
-    return setNum([quizNumbers].concat(num));
+    for (let i = 0; i < 4; i++) {
+      const quizNumbers = Math.floor(Math.random() * (36 - 5)) + 5;
+      // let uniq = [...new Set(quizNumbers)];
+      // quizArr.push(uniq);
+      // Array.from(new Set(qu))
+      quizArr.push(quizNumbers);
+    }
+    setNum(quizArr);
+    // quizArr = [];
   };
 
   console.log(num);
